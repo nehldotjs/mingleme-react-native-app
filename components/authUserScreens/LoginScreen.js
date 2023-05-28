@@ -66,7 +66,7 @@ const LoginScreen = () => {
                     name="userName"
                     placeholder="Username"
                     style={{
-                      padding: "15px",
+                      padding: "16px",
                       fontSize: "15px",
                       outlineColor: "transparent",
                       border: "none",
