@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "245246413493",
+    "project_id": "mingleme-319ec",
+    "storage_bucket": "mingleme-319ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245246413493:android:22160d2a5fb51f4a344cfc",
+        "android_client_info": {
+          "package_name": "host.exp.exponent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245246413493-609h7ub01ldkromk0qm0lbnsi7vd85gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAEf1a6Wi9MtMeM7OXeDjbxQhOsLVtWZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245246413493-609h7ub01ldkromk0qm0lbnsi7vd85gs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "245246413493-jrkd2u47av4osp5sf45lsmd550d9h0p7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "host.exp.exponent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
