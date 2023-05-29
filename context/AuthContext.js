@@ -31,7 +31,7 @@ function AuthProvider({ children }) {
 function AuthValues() {
   const value = {
     name: "nehl",
-    user: false,
+    user: true,
     // signInWithGoogle,
   };
   return value;

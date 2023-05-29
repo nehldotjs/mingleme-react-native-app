@@ -16,14 +16,18 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const LoginScreen = () => {
   const [loginModal, setLoginModal] = useState(false);
 
+  // INPUT
+  const [userName, setUserName] = useState("");
+  const [passWord, setPassWord] = useState("");
+
   const navigation = useNavigation();
   useLayoutEffect(() => {
     navigation.setOptions({ headerShown: false });
   }, []);
 
   const handleButtonClick = () => {
-    setLoginModal(true);
     // Perform any action or state updates related to the button click
+    setLoginModal(true);
   };
 
   return (
@@ -58,20 +62,19 @@ const LoginScreen = () => {
                   style={{
                     width: "100%",
                     backgroundColor: "#fff",
-                    padding: "20px",
-                    borderRadius: "10px"
+                    borderRadius: "10px",
+                    padding: "20px"
                   }}>
                   <input
                     type="text"
                     name="userName"
                     placeholder="Username"
                     style={{
-                      padding: "16px",
+                      padding: "15px",
                       fontSize: "15px",
                       outlineColor: "transparent",
                       border: "none",
-                      borderBottom: "1px solid darkgray",
-                      backgroundColor: "#fff"
+                      borderBottom: "1px solid darkgray"
                     }}
                   />
                   <input
@@ -82,9 +85,8 @@ const LoginScreen = () => {
                       padding: "15px",
                       fontSize: "15px",
                       outlineColor: "transparent",
-                      border: "none",
+                      border: "none"
                       // borderBottom: "1px solid darkgray",
-                      backgroundColor: "#fff"
                     }}
                   />
                 </View>
