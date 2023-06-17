@@ -28,10 +28,33 @@ function AuthProvider({ children }) {
 //   await Google.logInAsync();
 // };
 
+const data = [
+  {
+    id: 1,
+    firstName: "john",
+    lastName: "Doe",
+    occupation: "Engineer",
+    Age: "30",
+    sex: "male",
+    imageSrc:
+      "https://images.pexels.com/photos/17217610/pexels-photo-17217610/free-photo-of-man-love-people-relaxation.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    id: 2,
+    firstName: "Keisha",
+    lastName: "henzo",
+    occupation: "Engineer",
+    Age: "30",
+    sex: "female",
+    imageSrc:
+      "https://images.pexels.com/photos/17033057/pexels-photo-17033057/free-photo-of-bride-in-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  }
+];
 function AuthValues() {
   const value = {
     name: "nehl",
     user: true,
+    data
     // signInWithGoogle,
   };
   return value;
