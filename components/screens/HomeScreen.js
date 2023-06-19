@@ -28,13 +28,13 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={{ backgroundColor: "black", height: "100vh" }}>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "orange" }}>
+    <View style={{ backgroundColor: "#fbfbfb", height: "100vh" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
         <View
           style={{
             alignItems: "center",
             flexDirection: "row",
-            backgroundColor: "purple",
+            // backgroundColor: "purple",
             justifyContent: "space-evenly",
             height: "10%"
           }}>
@@ -84,7 +84,7 @@ const HomeScreen = () => {
               alignItems: "center",
               margi: "auto",
               position: "relative",
-              backgroundColor: "brown",
+              // backgroundColor: "brown",
               position: "absolute"
             }}>
             <Swiper
@@ -115,19 +115,18 @@ const HomeScreen = () => {
                       height: "70%",
                       width: "100%",
                       borderRadius: "20px",
-                      border: "1px solid blue",
+                      // border: "1px solid blue",
                       alignItems: "center",
                       justifyContent: "center",
-                      backgroundColor: "yellow",
                       position: "relative",
                       overflow: "hidden"
                     }}>
                     <View
                       style={{
                         position: "relative",
-                        width: "100%",
                         flex: "1",
-                        justifyContent: "center",
+                        width: "100%",
+                        justifyContent: "flex-end",
                         alignItems: "center"
                       }}>
                       <img
@@ -136,29 +135,51 @@ const HomeScreen = () => {
                           width: "100%",
                           margin: "auto",
                           objectFit: "cover",
+                          position: "absolute",
                           zIndex: "-1"
                         }}
                         src={imageSrc}
-                        alt={firstName + " " + lastName + "profile picture"}
+                        alt={
+                          firstName + " " + lastName + " " + "profile picture"
+                        }
                       />
                       <View
                         style={{
-                          height: "10%",
+                          height: "auto",
                           width: "100%",
+                          position: "relative",
                           bottom: "0px",
-                          position: "absolute",
-                          flexDirection: "row",
-                          // backgroundColor: "red",
-                          paddingVertical: "10px ",
-                          paddingHorizontal: "10px ",
-                          justifyContent: "space-between"
+                          paddingHorizontal: "20px",
+                          paddingVertical: "10px",
+                          background: "rgba(0, 0, 0, 0.4)",
                         }}>
-                        <View>
-                          <Text>{firstName + " " + lastName}</Text>
-                          <Text>{occupation}</Text>
-                        </View>
-                        <View>
-                          {sex === "male" ? "M" : sex === "female" ? "F" : ""}
+                        <View
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            flex: "1",
+                            flexDirection: "row",
+                            // paddingHorizontal: "10px",
+                            // backgroundColor: "orange",
+                            justifyContent: "space-between"
+                          }}>
+                          <View>
+                            <Text style={{ color: "white", fontSize: "20px" }}>
+                              {firstName + " " + lastName}
+                            </Text>
+                            <Text style={{ color: "white", fontSize: "20px" }}>
+                              {occupation}
+                            </Text>
+                          </View>
+                          <View>
+                            <Text style={{ color: "white", fontSize: "20px" }}>
+                              {sex === "male"
+                                ? "M"
+                                : sex === "female"
+                                ? "F"
+                                : "M"}
+                            </Text>
+                          </View>
                         </View>
                       </View>
                     </View>
