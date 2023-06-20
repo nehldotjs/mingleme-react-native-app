@@ -7,11 +7,10 @@ import {
   Image,
   StyleSheet
 } from "react-native";
-import { Fontisto, Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { Fontisto, Ionicons, FontAwesome5, Entypo } from "@expo/vector-icons";
 import Swiper from "react-native-deck-swiper";
 import { useNavigation } from "@react-navigation/native";
 import { useAuth } from "../../context/AuthContext";
-import { Entypo } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   const { name, data } = useAuth();
@@ -76,134 +75,155 @@ const HomeScreen = () => {
           </View>
         </TouchableOpacity>
       </View>
-
       <View
         style={{
-          justifyContent: "center",
-          backgroundColor: "brown",
-          alignItems: "center",
+          backgroundColor: "red",
           position: "relative",
           flex: 1
         }}>
-        <Swiper
-          containerStyle={{
-            backgroundColor: "transparent"
-          }}
-          ref={swiperRef}
-          cards={data}
-          onSwipedLeft={handleSwipeLeft}
-          onSwipedRight={handleSwipeRight}
-          loop={true}
-          stackSize={2}
-          cardIndex={0}
-          verticalSwipe={false}
-          overlayLabels={{
-            left: {
-              title: <FontAwesome5 name="heart-broken" size={50} color="red" />,
-              style: {
-                label: {
-                  textAlign: "right",
-                  color: "red"
+        <View
+          style={{
+            justifyContent: "space-evenly",
+            position: "relative",
+            flex: 1
+          }}>
+          <Swiper
+            containerStyle={{
+              backgroundColor: "transparent"
+            }}
+            ref={swiperRef}
+            cards={data}
+            onSwipedLeft={handleSwipeLeft}
+            onSwipedRight={handleSwipeRight}
+            loop={true}
+            stackSize={2}
+            cardIndex={0}
+            verticalSwipe={false}
+            overlayLabels={{
+              left: {
+                title: (
+                  <FontAwesome5 name="heart-broken" size={50} color="red" />
+                ),
+                style: {
+                  label: {
+                    textAlign: "right",
+                    color: "red"
+                  }
+                }
+              },
+              right: {
+                title: <Ionicons name="ios-heart" size={50} color="green" />,
+                style: {
+                  label: {
+                    textAlign: "left",
+                    color: "green"
+                  }
                 }
               }
-            },
-            right: {
-              title: <Ionicons name="ios-heart" size={50} color="green" />,
-              style: {
-                label: {
-                  textAlign: "left",
-                  color: "green"
-                }
-              }
-            }
-          }}
-          renderCard={(item) => {
-            const { occupation, age, sex, firstName, lastName, imageSrc, id } =
-              item;
-            return (
-              <View
-                key={id}
-                style={{
-                  width: "100%",
-                  height: "70%",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                  position: "relative"
-                }}>
+            }}
+            renderCard={(item) => {
+              const {
+                occupation,
+                age,
+                sex,
+                firstName,
+                lastName,
+                imageSrc,
+                id
+              } = item;
+              return (
                 <View
+                  key={id}
                   style={{
                     width: "100%",
-                    flex: 1,
-                    position: "relative",
-                    justifyContent: "flex-end",
-                    alignItems: "center"
+                    height: "70%",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    position: "relative"
                   }}>
-                  <img
-                    style={{
-                      height: "100%",
-                      width: "100%",
-                      margin: "auto",
-                      objectFit: "cover",
-                      position: "absolute",
-                      zIndex: "-1"
-                    }}
-                    src={imageSrc}
-                    alt={firstName + " " + lastName + " " + "profile picture"}
-                  />
-                </View>
-
-                <View
-                  style={[
-                    {
-                      bottom: "0px",
-                      width: "100%",
-                      height: "auto",
-                      position: "absolute",
-                      bottom: 0,
-                      paddingVertical: "10px",
-                      paddingHorizontal: "20px",
-                      background: "rgba(0, 0, 0, 0.4)"
-                    },
-                    styles.cardShadow
-                  ]}>
                   <View
                     style={{
-                      flex: "1",
                       width: "100%",
-                      height: "auto",
-                      flexDirection: "row",
-                      justifyContent: "space-between"
+                      flex: 1,
+                      position: "relative",
+                      justifyContent: "flex-end",
+                      alignItems: "center"
                     }}>
-                    <View>
-                      <Text style={{ color: "white", fontSize: "20px" }}>
-                        {firstName + " " + lastName}
-                      </Text>
-                      <Text style={{ color: "white", fontSize: "20px" }}>
-                        {occupation}
-                      </Text>
-                    </View>
-                    <View>
-                      <Fontisto
-                        name={sex == "male" ? "male" : "female"}
-                        size={24}
-                        color="white"
-                      />
+                    <img
+                      style={{
+                        height: "100%",
+                        width: "100%",
+                        margin: "auto",
+                        objectFit: "cover",
+                        position: "absolute",
+                        zIndex: "-1"
+                      }}
+                      src={imageSrc}
+                      alt={firstName + " " + lastName + " " + "profile picture"}
+                    />
+                  </View>
+
+                  <View
+                    style={[
+                      {
+                        bottom: "0px",
+                        width: "100%",
+                        height: "auto",
+                        position: "absolute",
+                        bottom: 0,
+                        paddingVertical: "10px",
+                        paddingHorizontal: "20px",
+                        background: "rgba(0, 0, 0, 0.4)"
+                      },
+                      styles.cardShadow
+                    ]}>
+                    <View
+                      style={{
+                        flex: "1",
+                        width: "100%",
+                        height: "auto",
+                        flexDirection: "row",
+                        justifyContent: "space-between"
+                      }}>
+                      <View>
+                        <Text style={{ color: "white", fontSize: "20px" }}>
+                          {firstName + " " + lastName}
+                        </Text>
+                        <Text style={{ color: "white", fontSize: "20px" }}>
+                          {occupation}
+                        </Text>
+                      </View>
+                      <View>
+                        <Fontisto
+                          name={sex == "male" ? "male" : "female"}
+                          size={24}
+                          color="white"
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
-              </View>
-            );
-          }}
-        />
+              );
+            }}
+          />
+        </View>
       </View>
       <View
         style={{
           width: "100%",
+          height: "auto",
           position: "relative",
-          margin: "auto",
-          backgroundColor: "red"
+          backgroundColor: "purple",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          flexDirection: "row"
         }}>
-        <Text>hello world</Text>
+        <TouchableOpacity onPress={() => swiperRef.current.swipeLeft()}>
+          <Entypo name="cross" size={30} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => swiperRef.current.swipeRight()}>
+          <Entypo name="heart" size={30} />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
