@@ -48,13 +48,43 @@ const data = [
     sex: "female",
     imageSrc:
       "https://images.pexels.com/photos/17033057/pexels-photo-17033057/free-photo-of-bride-in-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    id: 3,
+    firstName: "po",
+    lastName: "bo",
+    occupation: "Engineer",
+    Age: "30",
+    sex: "female",
+    imageSrc:
+      "https://images.pexels.com/photos/17131068/pexels-photo-17131068/free-photo-of-man-love-people-woman.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+  },
+  {
+    id: 4,
+    firstName: "ennie",
+    lastName: "pixu",
+    occupation: "Engineer",
+    Age: "30",
+    sex: "female",
+    imageSrc:
+      "https://images.pexels.com/photos/17237963/pexels-photo-17237963.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+  },
+  {
+    id: 5,
+    firstName: "nuel",
+    lastName: "henzo",
+    occupation: "Engineer",
+    Age: "30",
+    sex: "female",
+    imageSrc:
+      "https://images.pexels.com/photos/16943618/pexels-photo-16943618/free-photo-of-man-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   }
 ];
 function AuthValues() {
   const value = {
     name: "nehl",
     user: true,
-    data
+    data,
     // signInWithGoogle,
   };
   return value;
