@@ -71,7 +71,7 @@ const data = [
   },
   {
     id: 5,
-    firstName: "nuel",
+    firstName: "hernandez",
     lastName: "henzo",
     occupation: "Engineer",
     Age: "30",

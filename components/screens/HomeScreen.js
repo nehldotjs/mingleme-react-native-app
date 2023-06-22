@@ -149,15 +149,16 @@ const HomeScreen = () => {
                       justifyContent: "flex-end",
                       alignItems: "center"
                     }}>
-                    <img
+                    <Image
                       style={{
                         height: "100%",
                         width: "100%",
                         margin: "auto",
-                        objectFit: "cover",
+                        // objectFit: "cover",
                         position: "absolute",
                         zIndex: "-1"
                       }}
+                      resizeMode="cover"
                       src={imageSrc}
                       alt={firstName + " " + lastName + " " + "profile picture"}
                     />
@@ -186,10 +187,10 @@ const HomeScreen = () => {
                         justifyContent: "space-between"
                       }}>
                       <View>
-                        <Text style={{ color: "white", fontSize: "20px" }}>
+                        <Text style={{ color: "white", fontSize: 20 }}>
                           {firstName + " " + lastName}
                         </Text>
-                        <Text style={{ color: "white", fontSize: "20px" }}>
+                        <Text style={{ color: "white", fontSize: 20 }}>
                           {occupation}
                         </Text>
                       </View>
@@ -213,16 +214,26 @@ const HomeScreen = () => {
           width: "100%",
           height: "auto",
           position: "relative",
-          backgroundColor: "purple",
           justifyContent: "space-evenly",
           alignItems: "center",
           flexDirection: "row"
+          // bottom: 6
         }}>
-        <TouchableOpacity onPress={() => swiperRef.current.swipeLeft()}>
-          <Entypo name="cross" size={30} />
+        <TouchableOpacity
+          style={[
+            styles.swiperBtn,
+            { backgroundColor: "rgba(255, 0, 0, 0.4)" }
+          ]}
+          onPress={() => swiperRef.current.swipeLeft()}>
+          <Entypo name="cross" size={30} style={{ color: "red" }} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => swiperRef.current.swipeRight()}>
-          <Entypo name="heart" size={30} />
+        <TouchableOpacity
+          style={[
+            styles.swiperBtn,
+            { backgroundColor: "rgba(0, 255, 71, 0.4)" }
+          ]}
+          onPress={() => swiperRef.current.swipeRight()}>
+          <Entypo name="heart" size={30} style={{ color: "green" }} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -239,6 +250,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2
+  },
+
+  swiperBtn: {
+    height: 100,
+    width: 100,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "50%"
   }
 });
 
