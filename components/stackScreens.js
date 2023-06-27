@@ -21,7 +21,7 @@ const ScreensContainer = () => {
         </Stack.Navigator>
       ) : (
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       )}

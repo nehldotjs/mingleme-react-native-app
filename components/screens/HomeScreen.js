@@ -5,7 +5,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
-  StyleSheet
+  StyleSheet,
+  Dimensions
 } from "react-native";
 import { Fontisto, Ionicons, FontAwesome5, Entypo } from "@expo/vector-icons";
 import Swiper from "react-native-deck-swiper";
@@ -28,44 +29,28 @@ const HomeScreen = () => {
   const handleSwipeRight = () => {
     console.log("swiped right");
   };
+  const profileFunc = () => {
+    return navigation.navigate("Profile");
+  };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "transparent" }}>
-      <View
-        style={{
-          alignItems: "center",
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-          height: 100
-        }}>
-        <TouchableOpacity>
-          <View
-            style={{
-              height: 50,
-              width: 50,
-              borderRadius: 25,
-              overflow: "hidden",
-              alignSelf: "stretch"
-            }}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={profileFunc}>
+          <View style={styles.profileImageContainer}>
             <Image
               source={{
                 uri: "https://images.pexels.com/photos/17131288/pexels-photo-17131288/free-photo-of-antelope-canyon-paths.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }}
-              style={{ flex: 1 }}
+              style={styles.profileImage}
             />
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <View
-            style={{
-              width: 100,
-              backgroundColor: "transparent",
-              height: 50,
-              padding: 10
-            }}>
+          <View style={styles.logoContainer}>
             <Image
               source={require("../../assets/mingle-logo.png")}
-              style={{ flex: 1 }}
+              style={styles.logoImage}
             />
           </View>
         </TouchableOpacity>
@@ -75,22 +60,10 @@ const HomeScreen = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          backgroundColor: "red",
-          position: "relative",
-          flex: 1
-        }}>
-        <View
-          style={{
-            justifyContent: "space-evenly",
-            position: "relative",
-            flex: 1
-          }}>
+      <View style={styles.swiperContainer}>
+        <View style={styles.swiper}>
           <Swiper
-            containerStyle={{
-              backgroundColor: "transparent"
-            }}
+            containerStyle={styles.swiper}
             ref={swiperRef}
             cards={data}
             onSwipedLeft={handleSwipeLeft}
@@ -132,67 +105,23 @@ const HomeScreen = () => {
                 id
               } = item;
               return (
-                <View
-                  key={id}
-                  style={{
-                    width: "100%",
-                    height: "70%",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    position: "relative"
-                  }}>
-                  <View
-                    style={{
-                      width: "100%",
-                      flex: 1,
-                      position: "relative",
-                      justifyContent: "flex-end",
-                      alignItems: "center"
-                    }}>
+                <View key={id} style={styles.cardContainer}>
+                  <View style={styles.imageContainer}>
                     <Image
-                      style={{
-                        height: "100%",
-                        width: "100%",
-                        margin: "auto",
-                        // objectFit: "cover",
-                        position: "absolute",
-                        zIndex: "-1"
-                      }}
+                      style={styles.image}
                       resizeMode="cover"
-                      src={imageSrc}
+                      source={imageSrc}
                       alt={firstName + " " + lastName + " " + "profile picture"}
                     />
                   </View>
 
-                  <View
-                    style={[
-                      {
-                        bottom: "0px",
-                        width: "100%",
-                        height: "auto",
-                        position: "absolute",
-                        bottom: 0,
-                        paddingVertical: "10px",
-                        paddingHorizontal: "20px",
-                        background: "rgba(0, 0, 0, 0.4)"
-                      },
-                      styles.cardShadow
-                    ]}>
-                    <View
-                      style={{
-                        flex: "1",
-                        width: "100%",
-                        height: "auto",
-                        flexDirection: "row",
-                        justifyContent: "space-between"
-                      }}>
+                  <View style={[styles.cardOverlay, styles.cardShadow]}>
+                    <View style={styles.infoContainer}>
                       <View>
-                        <Text style={{ color: "white", fontSize: 20 }}>
+                        <Text style={styles.nameText}>
                           {firstName + " " + lastName}
                         </Text>
-                        <Text style={{ color: "white", fontSize: 20 }}>
-                          {occupation}
-                        </Text>
+                        <Text style={styles.occupationText}>{occupation}</Text>
                       </View>
                       <View>
                         <Fontisto
@@ -209,19 +138,10 @@ const HomeScreen = () => {
           />
         </View>
       </View>
-      <View
-        style={{
-          width: "100%",
-          height: "auto",
-          position: "relative",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          flexDirection: "row"
-          // bottom: 6
-        }}>
+      <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={[
-            styles.swiperBtn,
+            styles.swiperButton,
             { backgroundColor: "rgba(255, 0, 0, 0.4)" }
           ]}
           onPress={() => swiperRef.current.swipeLeft()}>
@@ -229,7 +149,7 @@ const HomeScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={[
-            styles.swiperBtn,
+            styles.swiperButton,
             { backgroundColor: "rgba(0, 255, 71, 0.4)" }
           ]}
           onPress={() => swiperRef.current.swipeRight()}>
@@ -240,7 +160,100 @@ const HomeScreen = () => {
   );
 };
 
+const { width, height } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    display: "flex",
+    backgroundColor: "transparent",
+    justifyContent: "spac-evenly",
+    alignItem: "center",
+    // backgroundColor: "purple",
+    margin: "auto",
+    width: "100%"
+  },
+  header: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    height: 100
+  },
+  profileImageContainer: {
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    overflow: "hidden",
+    alignSelf: "stretch"
+  },
+  profileImage: {
+    flex: 1
+  },
+  logoContainer: {
+    width: 100,
+    backgroundColor: "transparent",
+    height: 50,
+    padding: 10
+  },
+  logoImage: {
+    flex: 1
+  },
+  swiperContainer: {
+    // backgroundColor: "yellow",
+    position: "relative",
+    flex: 1
+  },
+  swiper: {
+    flex: 1,
+    backgroundColor: "transparent"
+  },
+  cardContainer: {
+    width: "100%",
+    height: "70%",
+    borderRadius: 20,
+    overflow: "hidden",
+    position: "relative",
+    backgroundColor: "black"
+  },
+  imageContainer: {
+    width: "100%",
+    height: "100%",
+    flex: 1,
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  image: {
+    height: "100%",
+    width: "100%",
+    margin: "auto",
+    position: "absolute",
+    zIndex: -1
+  },
+  cardOverlay: {
+    bottom: 0,
+    width: "100%",
+    height: "auto",
+    position: "absolute",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: "rgba(0, 0, 0, 0.4)"
+  },
+  infoContainer: {
+    flex: 1,
+    width: "100%",
+    height: "auto",
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  nameText: {
+    color: "white",
+    fontSize: 20
+  },
+  occupationText: {
+    color: "white",
+    fontSize: 20
+  },
   cardShadow: {
     shadowColor: "#000",
     shadowOffset: {
@@ -251,14 +264,24 @@ const styles = StyleSheet.create({
     shadowRadius: 1.41,
     elevation: 2
   },
-
-  swiperBtn: {
-    height: 100,
-    width: 100,
+  buttonsContainer: {
+    width: "100%",
+    height: "auto",
+    position: "relative",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexDirection: "row",
+    // backgroundColor: "pink",
+    padding: "20px"
+  },
+  swiperButton: {
+    height: 70,
+    width: 70,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "50%"
+    borderRadius: 50,
+    margin: "auto"
   }
 });
 
