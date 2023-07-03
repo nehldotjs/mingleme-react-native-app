@@ -89,7 +89,6 @@ const ProfileScreen = () => {
             width: "100%",
             height: "100%",
             display: "flex",
-            // padding: "10px"
           }}>
           <View
             style={{
@@ -99,18 +98,7 @@ const ProfileScreen = () => {
               justifyContent: "center",
               alignItem: "center"
             }}>
-            {/* <LinearGradient
-              colors={["rgba(0, 0, 0, 0.20)", "black"]} // Array of gradient colors
-              start={{ x: 1, y: 0 }} // Start point (top left)
-              end={{ x: 1, y: 1 }} // End point (bottom left)
-              style={{
-                flex: 1,
-                width: "100%",
-                position: "relative",
-                // backgroundColor: "orange",
-                justifyContent: "center",
-                alignItems: "center"
-              }}> */}
+           
             <View
               style={{
                 flex: 1,
@@ -312,7 +300,6 @@ const ProfileScreen = () => {
                 </LinearGradient>
               </ScrollView>
             </View>
-            {/* </LinearGradient> */}
           </View>
         </View>
 
