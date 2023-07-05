@@ -75,7 +75,6 @@ const ProfileScreen = () => {
             width: "100%",
             justifyContent: "space-between",
             alignItems: "center",
-            backgroundColor: "purple",
             flexDirection: "row"
           }}>
           <Text style={styles.boldText}>{lastName + " " + firstName}</Text>
@@ -86,15 +85,16 @@ const ProfileScreen = () => {
             height: "auto",
             width: "100%",
             padding: 20,
-            backgroundColor: "green",
-            justifyContent: "space-evenly"
+            justifyContent: "flex-start",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            display: "flex",
+            gap: 10
           }}>
           {hobbies.map((x, index) => (
             <Text
               key={index}
               style={{
-                flex: 1,
-                width: "auto",
                 color: "white",
                 backgroundColor: "gray"
               }}>
@@ -147,8 +147,8 @@ const ProfileScreen = () => {
               <Image
                 source={require("../../assets/backgroundImg.jpg")}
                 style={{
-                  height: "100%",
                   width: "100%",
+                  height: "100%",
                   margin: "auto",
                   display: "flex"
                 }}
@@ -158,6 +158,7 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
         {/* IMAGE SECTION */}
+
         {/* TOGGLE BUTTON SECTION */}
         <View
           style={{
@@ -172,9 +173,9 @@ const ProfileScreen = () => {
           }}>
           <View
             style={{
-              display: "flex",
               flex: 1,
               width: "100%",
+              display: "flex",
               justifyContent: "center",
               alignItems: "center"
             }}>
@@ -183,11 +184,10 @@ const ProfileScreen = () => {
                 flex: 1,
                 width: "100%",
                 height: "100%",
-                justifyContent: "flex-start",
-                backgroundColor: "orange"
+                justifyContent: "flex-start"
               }}>
               <LinearGradient
-                colors={["rgba(0, 0, 0, 0.50)", "black", "black"]}
+                colors={["rgba(0, 0, 0, 0.50)", "black"]}
                 start={{ x: 1, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={{
