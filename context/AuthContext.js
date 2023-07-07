@@ -9,7 +9,7 @@ const AuthContext = createContext();
 function useAuth() {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    throw new Error("useAuth must  be used within an AuthProvider");
   }
   return context;
 }
@@ -23,10 +23,6 @@ function AuthProvider({ children }) {
 }
 
 // Define the Values to be rendered to the auth provider below
-
-// const signInWithGoogle = async () => {
-//   await Google.logInAsync();
-// };
 
 const data = [
   {
@@ -80,11 +76,16 @@ const data = [
       "https://images.pexels.com/photos/16943618/pexels-photo-16943618/free-photo-of-man-with-curly-hair.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   }
 ];
+
+// const signInWithGoogle = async () => {
+//   await Google.logInAsync();
+// };
+
 function AuthValues() {
   const value = {
     name: "nehl",
     user: true,
-    data,
+    data
     // signInWithGoogle,
   };
   return value;
