@@ -32,7 +32,7 @@ const HomeScreen = () => {
   const profileFunc = () => {
     return navigation.navigate("Profile");
   };
-
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -46,7 +46,7 @@ const HomeScreen = () => {
             />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Modal")}>
           <View style={styles.logoContainer}>
             <Image
               source={require("../../assets/mingle-logo.png")}
