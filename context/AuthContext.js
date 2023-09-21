@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from "react";
+
 import { View, Text } from "react-native";
 // import * as Google from "expo-google-app-auth";
 
@@ -51,7 +52,7 @@ const data = [
     lastName: "bo",
     occupation: "Engineer",
     Age: "30",
-    sex: "female",
+    sex: "male",
     imageSrc:
       "https://images.pexels.com/photos/17131068/pexels-photo-17131068/free-photo-of-man-love-people-woman.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   },
@@ -83,7 +84,7 @@ const data = [
 
 function AuthValues() {
   const value = {
-    name: "nehl",
+    name: "nelly p",
     user: true,
     data
     // signInWithGoogle,

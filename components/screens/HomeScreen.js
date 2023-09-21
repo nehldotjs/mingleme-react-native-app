@@ -131,7 +131,7 @@ const HomeScreen = () => {
                         />
                       </View>
                     </View>
-                    <Text>lorem30</Text>
+                    {/* <Text>lorem30</Text> */}
                   </View>
                 </View>
               );
