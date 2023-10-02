@@ -10,19 +10,22 @@ import SignUpScreen from "./authUserScreens/SignUpScreen";
 import { useAuth } from "../context/AuthContext";
 
 const Stack = createNativeStackNavigator();
-
 const ScreensContainer = () => {
-  const { user } = useAuth();
+  const { isAdmin } = useAuth();
   return (
     <Stack.Navigator>
-      {!user ? (
-        <Stack.Screen name="Login" component={LoginScreen} />
+      {!isAdmin ? (
+        <>
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
+        </>
       ) : (
         <>
           <Stack.Group>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Profile" component={ProfileScreen} />
           </Stack.Group>
+
           <Stack.Group screenOptions={{ presentation: "modal" }}>
             <Stack.Screen name="Modal" component={ModalScreen} />
           </Stack.Group>
