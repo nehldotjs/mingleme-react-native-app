@@ -1,9 +1,9 @@
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StyleSheet, View, Text } from "react-native";
-import React from "react";
 
 import HomeScreen from "./screens/HomeScreen";
-import ModalScreen from "./screens/modalScreen";
+import ModalScreen from "./screens/ModalScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import LoginScreen from "./authUserScreens/LoginScreen";
 import SignUpScreen from "./authUserScreens/SignUpScreen";

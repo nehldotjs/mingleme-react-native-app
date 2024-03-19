@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useAuth } from "../../context/AuthContext";
 
 const HomeScreen = () => {
-  const { name, data } = useAuth();
+  const { name, data, mingleMeLogo } = useAuth();
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -48,10 +48,7 @@ const HomeScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("Modal")}>
           <View style={styles.logoContainer}>
-            <Image
-              source={require("../../assets/mingle-logo.png")}
-              style={styles.logoImage}
-            />
+            <Image source={mingleMeLogo} style={styles.logoImage} />
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -181,9 +178,9 @@ const styles = StyleSheet.create({
     height: 100
   },
   profileImageContainer: {
-    height: 50,
-    width: 50,
-    borderRadius: 25,
+    height: 60,
+    width: 60,
+    borderRadius: 50,
     overflow: "hidden",
     alignSelf: "stretch"
   },
@@ -191,7 +188,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   logoContainer: {
-    width: 100,
+    width: 100, 
     backgroundColor: "transparent",
     height: 50,
     padding: 10

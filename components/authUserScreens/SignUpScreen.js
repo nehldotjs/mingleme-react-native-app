@@ -14,7 +14,7 @@ import {
   Ionicons,
   Entypo,
   Feather,
-  Fontisto
+  Fontisto,
 } from "@expo/vector-icons";
 
 const SignUpScreen = () => {

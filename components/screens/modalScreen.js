@@ -19,11 +19,7 @@ function ModalScreen() {
 
   return (
     <View style={styles.container}>
-      {/* <Image
-        source={{
-          uri: "https://images.pexels.com/photos/17131288/pexels-photo-17131288/free-photo-of-antelope-canyon-paths.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }}
-      /> */} 
+
       <Image source={mingleMeLogo} />
       <Text style={{ margin: "auto", color: "orange" }}>Hello </Text>
     </View>

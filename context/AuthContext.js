@@ -1,9 +1,5 @@
 import React, { createContext, useContext } from "react";
-
-import { View, Text } from "react-native";
 const mingleMeLogo = require("../assets/mingle-logo.png");
-
-// import * as Google from "expo-google-app-auth";
 
 // Create the AuthContext
 const AuthContext = createContext();
@@ -80,17 +76,12 @@ const data = [
   }
 ];
 
-// const signInWithGoogle = async () => {
-//   await Google.logInAsync();
-// };
-
 function AuthValues() {
   const value = {
     name: "nelly p",
     isAdmin: true,
     data,
     mingleMeLogo
-    // signInWithGoogle,
   };
   return value;
 }
