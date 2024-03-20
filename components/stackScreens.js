@@ -8,6 +8,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import LoginScreen from "./authUserScreens/LoginScreen";
 import SignUpScreen from "./authUserScreens/SignUpScreen";
 import { useAuth } from "../context/AuthContext";
+import ChatScreen from "./screens/ChatScreen";
 
 const Stack = createNativeStackNavigator();
 const ScreensContainer = () => {
@@ -23,6 +24,7 @@ const ScreensContainer = () => {
         <>
           <Stack.Group>
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Chat" component={ChatScreen} />
             <Stack.Screen name="Profile" component={ProfileScreen} />
           </Stack.Group>
 

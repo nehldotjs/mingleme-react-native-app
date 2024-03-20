@@ -32,7 +32,10 @@ const HomeScreen = () => {
   const profileFunc = () => {
     return navigation.navigate("Profile");
   };
-  
+  const chatHandler = () => {
+    return navigation.navigate("Chat");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -51,7 +54,7 @@ const HomeScreen = () => {
             <Image source={mingleMeLogo} style={styles.logoImage} />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={chatHandler}>
           <View>
             <Entypo name="chat" size={30} color="orange" />
           </View>
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   logoContainer: {
-    width: 100, 
+    width: 100,
     backgroundColor: "transparent",
     height: 50,
     padding: 10
